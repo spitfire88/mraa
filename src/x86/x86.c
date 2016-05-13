@@ -87,10 +87,10 @@ mraa_x86_platform()
             } else if (strncasecmp(line, "UP-CHT01", 8) == 0) {
                 platform_type = MRAA_UP;
                 plat = mraa_up_board();
-            } else if (strncasecmp(line, "RVP", 4) == 0) {
+            } else if (strncasecmp(line, "RVP", 3) == 0) {
                 platform_type = MRAA_INTEL_GT_KSANKA;
                 plat = mraa_gt_ksanka_board();
-            } else if (strncasecmp(line, "SDS", 4) == 0) {
+            } else if (strncasecmp(line, "SDS", 3) == 0) {
                 platform_type = MRAA_INTEL_GT_KSANKA;
                 plat = mraa_gt_ksanka_board();
             } else {

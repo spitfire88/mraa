@@ -58,7 +58,19 @@ mraa_gt_ksanka_board()
         goto error;
     }
 
+    b->i2c_bus_count = 2;
+    b->i2c_bus[0].bus_id = 5;
+    b->i2c_bus[0].sda = 14;
+    b->i2c_bus[0].scl = 16;
+    b->i2c_bus[0].bus_id = 6;
+    b->i2c_bus[0].sda = 18;
+    b->i2c_bus[0].scl = 20;
+
+    b->def_i2c_bus = b->i2c_bus[0].bus_id;
+
+
     int pos = 0;
+
     // Ksanka header
     strncpy(b->pins[pos].name, "GND", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 0, 0, 0, 0, 0, 0, 0 };

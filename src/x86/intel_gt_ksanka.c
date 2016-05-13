@@ -153,49 +153,49 @@ mraa_gt_ksanka_board()
 
     strncpy(b->pins[pos].name, "GPIO0", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 23;
+    b->pins[pos].gpio.pinmap = 337;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "GPIO1", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 24;
+    b->pins[pos].gpio.pinmap = 338;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "GPIO2", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 25;
+    b->pins[pos].gpio.pinmap = 339;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "GPIO3", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 26;
+    b->pins[pos].gpio.pinmap = 340;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "GPIO4", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 27;
+    b->pins[pos].gpio.pinmap = 341;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "IO3", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 28;
+    b->pins[pos].gpio.pinmap = 342;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "GPIO6", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 29;
+    b->pins[pos].gpio.pinmap = 343;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "GPIO7", 8);
     b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
-    b->pins[pos].gpio.pinmap = 30;
+    b->pins[pos].gpio.pinmap = 344;
     b->pins[pos].gpio.mux_total = 0;
     pos++;
 

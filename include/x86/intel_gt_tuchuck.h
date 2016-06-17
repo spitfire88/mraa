@@ -31,10 +31,10 @@ extern "C" {
 #include "mraa_internal.h"
 
 // +1 as pins are "1 indexed"
-#define MRAA_INTEL_GT_KSANKA_PINCOUNT (40 + 1)
+#define MRAA_INTEL_GT_TUCHUCK_PINCOUNT (40 + 1)
 
 mraa_board_t*
-mraa_gt_ksanka_board();
+mraa_gt_tuchuck_board();
 
 #ifdef __cplusplus
 }

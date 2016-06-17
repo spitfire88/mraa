@@ -41,7 +41,7 @@ set (mraa_LIB_X86_SRCS_NOAUTO
   ${PROJECT_SOURCE_DIR}/src/x86/intel_sofia_3gr.c
   ${PROJECT_SOURCE_DIR}/src/x86/intel_cherryhills.c
   ${PROJECT_SOURCE_DIR}/src/x86/up.c
-  ${PROJECT_SOURCE_DIR}/src/x86/intel_gt_ksanka.c
+  ${PROJECT_SOURCE_DIR}/src/x86/intel_gt_tuchuck.c
 )
 
 message (STATUS "INFO - Adding support for platform ${MRAAPLATFORMFORCE}")
@@ -67,8 +67,8 @@ if (NOT ${MRAAPLATFORMFORCE} STREQUAL "ALL")
     set (mraa_LIB_X86_SRCS_NOAUTO ${PROJECT_SOURCE_DIR}/src/x86/x86.c ${PROJECT_SOURCE_DIR}/src/x86/intel_cherryhills.c)
   elseif (${MRAAPLATFORMFORCE} STREQUAL "MRAA_UP")
     set (mraa_LIB_X86_SRCS_NOAUTO ${PROJECT_SOURCE_DIR}/src/x86/x86.c ${PROJECT_SOURCE_DIR}/src/x86/up.c)
-  elseif( ${MRAAPLATFORMFORCE} STREQUAL "MRAA_INTEL_GT_KSANKA")
-    set (mraa_LIB_X86_SRCS_NOAUTO ${PROJECT_SOURCE_DIR}/src/x86/x86.c ${PROJECT_SOURCE_DIR}/src/x86/intel_gt_ksanka.c)
+  elseif( ${MRAAPLATFORMFORCE} STREQUAL "MRAA_INTEL_GT_TUCHUCK")
+    set (mraa_LIB_X86_SRCS_NOAUTO ${PROJECT_SOURCE_DIR}/src/x86/x86.c ${PROJECT_SOURCE_DIR}/src/x86/intel_gt_tuchuck.c)
   else ()
     message (FATAL_ERROR "Unknown x86 platform enabled!")
   endif ()

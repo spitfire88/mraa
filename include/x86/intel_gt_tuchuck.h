@@ -31,7 +31,7 @@ extern "C" {
 #include "mraa_internal.h"
 
 // +1 as pins are "1 indexed"
-#define MRAA_INTEL_GT_TUCHUCK_PINCOUNT (40 + 1)
+#define MRAA_INTEL_GT_TUCHUCK_PINCOUNT (40*2 + 1)
 
 mraa_board_t*
 mraa_gt_tuchuck_board();

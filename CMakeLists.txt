@@ -10,11 +10,11 @@ set (CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall ")
 include(GNUInstallDirs)
 
 # Older cmake might not pick CMAKE_INSTALL_LIBDIR right
-if (CMAKE_INSTALL_LIBDIR)
-  set (LIB_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}" CACHE PATH "Installation path for libraries")
-else ()
+#if (CMAKE_INSTALL_LIBDIR)
+#  set (LIB_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}" CACHE PATH "Installation path for libraries")
+#else ()
   set (LIB_INSTALL_DIR "lib" CACHE PATH "Installation path for libraries")
-endif ()
+#endif ()
 
 # By default, build shared object libraries on linux
 if (UNIX AND NOT APPLE)
@@ -125,6 +125,22 @@ if (BUILDDOC)
       COMMENT "Generating API documentation with Doxygen" VERBATIM
     )
   endif (DOXYGEN_FOUND)
+endif ()
+
+# root@intel-corei7-64:~/git/mraa/build# cmake -DTGZ=ON -DLIB_INSTALL_DIR=lib -DCMAKE_INSTALL_PREFIX=/usr -DINSTALLGPIOTOOL=ON -DINSTALLTOOLS=ON ..
+if (TGZ)
+  set(CPACK_GENERATOR "STGZ")
+  set(OPKG_ARCH ${TARGET_ARCH})
+  set(CPACK_BINARY_DIR ${CMAKE_BINARY_DIR})
+  set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Intel IoT-Devkit") #required
+  set(CPACK_PACKAGE_FILE_NAME "mraa-${mraa_VERSION_STRING}-${VERSION_COMMIT}.${DETECTED_ARCH}")
+  set(CPACK_PACKAGE_RELEASE 1)
+  set(CPACK_PACKAGE_VERSION
+      "${mraa_VERSION_STRING}")
+  set(CPACK_PACKAGE_CONTACT "Intel IoT-Devkit")
+  set(CPACK_PACKAGE_VENDOR "Intel IoT-Devkit")
+  set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_SOURCE_DIR}/COPYING)
+  include(CPack)
 endif ()
 
 if (IPK)

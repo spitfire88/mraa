@@ -74,6 +74,23 @@ mraa_gt_tuchuck_board()
     b->i2c_bus[1].scl = 21;
     b->def_i2c_bus = b->i2c_bus[0].bus_id;
 
+#if 0
+    b->spi_bus_count = 6;
+    b->def_spi_bus = 0;
+    b->spi_bus[0].bus_id = 32764;
+    b->spi_bus[0].slave_s = 1;
+    b->spi_bus[1].bus_id = 32764;
+    b->spi_bus[1].slave_s = 2;
+    b->spi_bus[2].bus_id = 32765;
+    b->spi_bus[2].slave_s = 0;
+    b->spi_bus[3].bus_id = 32765;
+    b->spi_bus[3].slave_s = 1;
+    b->spi_bus[4].bus_id = 32766;
+    b->spi_bus[4].slave_s = 0;
+    b->spi_bus[5].bus_id = 32766;
+    b->spi_bus[5].slave_s = 1;
+#endif
+
     int pos = 0;
 
     strncpy(b->pins[pos].name, "INVALID", 8);
@@ -258,9 +275,12 @@ mraa_gt_tuchuck_board()
     pos++;
 
     strncpy(b->pins[pos].name, "PWM0", 8);
-    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
+    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 1, 0, 0, 0, 0, 0 };
     b->pins[pos].gpio.pinmap = 463;
     b->pins[pos].gpio.mux_total = 0;
+    b->pins[pos].pwm.pinmap = 0;
+    b->pins[pos].pwm.parent_id = 0;
+    b->pins[pos].pwm.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "I2S4BLK", 8);
@@ -271,9 +291,12 @@ mraa_gt_tuchuck_board()
     pos++;
 
     strncpy(b->pins[pos].name, "PWM1", 8);
-    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
+    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 1, 0, 0, 0, 0, 0 };
     b->pins[pos].gpio.pinmap = 464;
     b->pins[pos].gpio.mux_total = 0;
+    b->pins[pos].pwm.pinmap = 1;
+    b->pins[pos].pwm.parent_id = 0;
+    b->pins[pos].pwm.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "I2S4WS", 8);
@@ -284,9 +307,12 @@ mraa_gt_tuchuck_board()
     pos++;
 
     strncpy(b->pins[pos].name, "PWM2", 8);
-    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
+    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 1, 0, 0, 0, 0, 0 };
     b->pins[pos].gpio.pinmap = 465;
     b->pins[pos].gpio.mux_total = 0;
+    b->pins[pos].pwm.pinmap = 2;
+    b->pins[pos].pwm.parent_id = 0;
+    b->pins[pos].pwm.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "I2S3SDO", 8);
@@ -296,9 +322,12 @@ mraa_gt_tuchuck_board()
     pos++;
 
     strncpy(b->pins[pos].name, "PWM3", 8);
-    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 0, 0, 0, 0, 0, 0 };
+    b->pins[pos].capabilites = (mraa_pincapabilities_t){ 1, 1, 1, 0, 0, 0, 0, 0 };
     b->pins[pos].gpio.pinmap = 466;
     b->pins[pos].gpio.mux_total = 0;
+    b->pins[pos].pwm.pinmap = 3;
+    b->pins[pos].pwm.parent_id = 0;
+    b->pins[pos].pwm.mux_total = 0;
     pos++;
 
     strncpy(b->pins[pos].name, "I2S3SDI", 8);
